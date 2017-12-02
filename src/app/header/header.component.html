@@ -2,8 +2,11 @@
 	<div class="row">
     <h5>
       <span>Logo</span>
-      <a class="nav-link" [routerLink]="['/users']">{{appName}}</a>
-      <span class="sr-only" [innerText]="appName"></span>
+      <span class="nav-link" *ngIf="!isProjectPage">
+        {{appName}}
+        </span>
+      <a class="nav-link" *ngIf="isProjectPage" [routerLink]="['/']">
+        "All Projects" - {{projectName}}</a>
     </h5>
     <div class="clearfix"></div>
     <h3>My Projects</h3>

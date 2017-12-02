@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {HeaderService} from '../header.service';
 
 @Component({
   selector: 'app-header',
@@ -6,11 +7,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  appName= 'Sample';
+  appName = 'Ecoglobe building optimizer';
   loginClicked = false;
-  constructor() { }
+  isProjectPage = false;
+  projectName: string;
+
+  constructor(private headersService: HeaderService) {
+  }
 
   ngOnInit() {
+    this.headersService.onProjectPage.subscribe(
+      (name: string) => {
+        debugger;
+        if (name) {
+          this.isProjectPage = true;
+          this.projectName = name;
+        } else {
+          this.projectName = '';
+          this.isProjectPage = false;
+        }
+      }
+    );
   }
 
   onLogin() {

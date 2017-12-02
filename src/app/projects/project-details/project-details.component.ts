@@ -3,6 +3,7 @@ import {ActivatedRoute, Params} from '@angular/router';
 import {Subscription} from 'rxjs/Subscription';
 import { DataService } from '../../data.service';
 import {Project} from '../project.model';
+import {HeaderService} from '../../header.service';
 
 @Component({
   selector: 'app-project-details',
@@ -14,11 +15,12 @@ export class ProjectDetailsComponent implements OnInit, OnDestroy {
   public isCollapsed = false;
   project: Project;
   paramSubscription: Subscription;
-  constructor(private route: ActivatedRoute, private dataService: DataService) { }
+  constructor(private route: ActivatedRoute, private dataService: DataService, private headerService: HeaderService) { }
 
   ngOnInit() {
     const id = this.route.snapshot.params['id'];
     this.project = this.dataService.getProject(id);
+    this.headerService.onProjectPage.next(this.project.name);
     this.paramSubscription = this.route.params.subscribe(
       (params: Params) => {
         this.project.id = params['id'];

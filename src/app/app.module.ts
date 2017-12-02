@@ -13,6 +13,7 @@ import { UserDetailTableComponent } from './users/user-detail-table/user-detail-
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectCardComponent } from './projects/project-card/project-card.component';
 import { ProjectDetailsComponent } from './projects/project-details/project-details.component';
+import {HeaderService} from './header.service';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent },
@@ -40,7 +41,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [HeaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
