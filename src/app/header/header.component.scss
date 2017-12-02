@@ -1,30 +1,97 @@
 @import '~sass/variables';
 
 :host {
-  height: 50px;
+  display: block;
+  background-color:$uiDark00;
+  color: white;
 }
-
 .container-fluid {
-  border-bottom: 1px solid black;
-}
-
-.row {
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 15px;
-}
-
-.login-btn {
-  padding: 0 22px;
-  height: 30px;
-}
-
-.nav-item {
-  &.active {
-    border-bottom: 1px solid black;
+  height: 100%;
+  .row {
+    height: 100%;
   }
 }
 
-.nav-link {
-  color: black;
+.wrapper {
+  padding-top: 12px;
+  width: 100%;
+  position: relative;
+  &.small-header {
+    height: 126px;
+    padding-bottom: 20px;
+  }
+  &.big-header {
+    height: 161px;
+    padding-bottom: 29px;
+  }
+}
+
+.logo-big {
+  height: 46px;
+  width: 198px;
+}
+.project-title {
+  font-weight: 300;
+  font-size: 39px;
+  color: white;
+  margin-bottom: 0;
+}
+.dropdown-container {
+  margin-top: 5px;
+  .dropdown-menu {
+    left: 1004px !important;
+  }
+  .dropdown-item {
+    color: $uiDark01;
+  }
+}
+.user-name {
+  color: white;
+  opacity: 0.7;
+  font-size: 14px;
+  font-weight: 300;
+  &:after {
+    margin-left: 10px;
+    position: relative;
+    top: 1px;
+  }
+}
+
+.all-project-link {
+  color: white;
+  opacity: 0.55;
+  margin-left: -1px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  svg {
+    fill: white;
+    height: 25px;
+    width: 24px;
+  }
+  span {
+    margin-left: 14px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+  }
+}
+
+.add-project-btn {
+  position: absolute;
+  background-color: #00C3FA;
+  border: none;
+  height: 54px;
+  width: 54px;
+  border-radius: 50%;
+  padding: 0;
+  bottom: -27px;
+  right: 67px;
+  padding-top: 7px;
+  svg {
+    fill: white;
+    width: 21px;
+    height: 21px;
+  }
 }

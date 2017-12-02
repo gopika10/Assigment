@@ -1,26 +1,81 @@
 <div class="container-fluid">
-	<div class="row">
-    <h5>
-      <span>Logo</span>
-      <span class="nav-link" *ngIf="!isProjectPage">
-        {{appName}}
+  <div class="row">
+    <div class="wrapper d-flex flex-column justify-content-between" [ngClass]="{'small-header': isProjectPage, 'big-header': !isProjectPage}">
+      <div class="d-flex justify-content-between">
+      <span *ngIf="!isProjectPage">
+        <img src="../../assets/images/logo.svg" class="logo logo-big">
         </span>
-      <a class="nav-link" *ngIf="isProjectPage" [routerLink]="['/projects']">
-        "All Projects" - {{projectName}}</a>
-    </h5>
-    <div class="clearfix"></div>
-    <h3>My Projects</h3>
-    <div ngbDropdown>
-      <a id="profileMenu" ngbDropdownToggle>Tariq Kaddoura</a>
-      <div ngbDropdownMenu aria-labelledby="profileMenu">
-        <a class="dropdown-item" href="#">Account Details</a>
-        <a class="dropdown-item" href="#">Logout</a>
+      <a class="all-project-link" *ngIf="isProjectPage" [routerLink]="['/projects']">
+        <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 0 21.9497986 25.3453979" style="enable-background:new 0 0 21.9497986 25.3453979;" xml:space="preserve">
+          <style type="text/css">
+            .st0{fill:#FFFFFF;}
+            .st1{clip-path:url(#SVGID_2_);fill:url(#SVGID_3_);}
+            .st2{clip-path:url(#SVGID_5_);}
+            .st3{clip-path:url(#SVGID_7_);fill:#F5F5F5;}
+            .st4{opacity:0.550003;clip-path:url(#SVGID_9_);}
+            .st5{clip-path:url(#SVGID_11_);fill:#D5D5D5;}
+            .st6{clip-path:url(#SVGID_11_);fill:#EAEAEA;}
+            .st7{clip-path:url(#SVGID_5_);fill:url(#SVGID_12_);}
+            .st8{fill:#D5D5D5;}
+            .st9{fill:#929191;}
+            .st10{fill:#CCD1D9;}
+            .st11{clip-path:url(#SVGID_14_);fill:#424A54;}
+            .st12{clip-path:url(#SVGID_14_);fill:#CCD1D9;}
+            .st13{clip-path:url(#SVGID_14_);fill:#E5E8ED;}
+            .st14{clip-path:url(#SVGID_14_);fill:#ABB2BD;}
+            .st15{clip-path:url(#SVGID_14_);fill:#A1D469;}
+            .st16{clip-path:url(#SVGID_14_);fill:#ED5466;}
+            .st17{fill:#030005;}
+            .st18{fill:#211A14;}
+          </style>
+          <path d="M10.9751997,22.7459984l-8.724-5.0360012V7.6349983l8.7229996-5.0349998l4.0039997,2.3120003L6.7881999,9.638998
+            l2.2519994,1.3000002l8.1889992-4.7270002l2.4689999,1.427v3.0139999l-8.7229986,5.0380001v2.6009998l8.7229986-5.0360003v4.4539995
+            L10.9751997,22.7459984z M10.9751997-0.0000019L0.0001993,6.3349991v12.6749992l10.9750004,6.3349991l10.9749994-6.3349991
+            V6.3399982L10.9751997-0.0000019z"/>
+        </svg>
+        <span>All Projects</span>
+      </a>
+      <div ngbDropdown class="dropdown-container">
+        <a id="profileMenu" ngbDropdownToggle class="user-name">Tariq Kaddoura</a>
+        <div ngbDropdownMenu aria-labelledby="profileMenu">
+          <a class="dropdown-item" href="#">Account Details</a>
+          <a class="dropdown-item" href="#">Logout</a>
+        </div>
       </div>
+      </div>
+      <h3 class="project-title">
+        {{isProjectPage? projectName : "My projects"}}
+      </h3>
+      <button (click)="loadProjects()" type="button" class="add-project-btn">
+        <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	        viewBox="0 0 20.5820007 20.5820007" style="enable-background:new 0 0 20.5820007 20.5820007;" xml:space="preserve">
+          <style type="text/css">
+            .st0{fill:#FFFFFF;}
+            .st1{clip-path:url(#SVGID_2_);fill:url(#SVGID_3_);}
+            .st2{clip-path:url(#SVGID_5_);}
+            .st3{clip-path:url(#SVGID_7_);fill:#F5F5F5;}
+            .st4{opacity:0.550003;clip-path:url(#SVGID_9_);}
+            .st5{clip-path:url(#SVGID_11_);fill:#D5D5D5;}
+            .st6{clip-path:url(#SVGID_11_);fill:#EAEAEA;}
+            .st7{clip-path:url(#SVGID_5_);fill:url(#SVGID_12_);}
+            .st8{fill:#D5D5D5;}
+            .st9{fill:#929191;}
+            .st10{fill:#CCD1D9;}
+            .st11{clip-path:url(#SVGID_14_);fill:#424A54;}
+            .st12{clip-path:url(#SVGID_14_);fill:#CCD1D9;}
+            .st13{clip-path:url(#SVGID_14_);fill:#E5E8ED;}
+            .st14{clip-path:url(#SVGID_14_);fill:#ABB2BD;}
+            .st15{clip-path:url(#SVGID_14_);fill:#A1D469;}
+            .st16{clip-path:url(#SVGID_14_);fill:#ED5466;}
+            .st17{fill:#030005;}
+            .st18{fill:#211A14;}
+          </style>
+          <path d="M20.585907,12.2508106H12.250946v8.3310547H8.3310242v-8.3310547h-8.3310547V8.3308887h8.3310547v-8.3349609h3.9199219
+            v8.3349609h8.3349609V12.2508106z"/>
+      </svg>
+      </button>
     </div>
   </div>
-  <div class="row" *ngIf="!isProjectPage">
-    <button (click)="loadProjects()" type="button" class="btn btn-outline-secondary">
-      +
-    </button>
-  </div>
+
 </div>

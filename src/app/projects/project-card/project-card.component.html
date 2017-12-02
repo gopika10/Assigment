@@ -3,6 +3,15 @@
   <div class="card-body">
     <a class="card-title" [routerLink]="['/projects', project.id]">{{project.name}}</a>
     <p class="card-text">{{project.scenario.name}}</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+
+      <div ngbDropdown class="project-menu-dropdown">
+        <span id="projectMenu" ngbDropdownToggle>...</span>
+        <div ngbDropdownMenu aria-labelledby="projectMenu">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Action</a>
+        </div>
+      </div>
   </div>
 </div>
