@@ -1,0 +1,18 @@
+<div class="container-fluid">
+	<div class="row">
+    <h5>
+      <span>Logo</span>
+      <a class="nav-link" [routerLink]="['/users']">{{appName}}</a>
+      <span class="sr-only" [innerText]="appName"></span>
+    </h5>
+    <div class="clearfix"></div>
+    <h3>My Projects</h3>
+    <div ngbDropdown>
+      <a id="profileMenu" ngbDropdownToggle>Tariq Kaddoura</a>
+      <div ngbDropdownMenu aria-labelledby="profileMenu">
+        <a class="dropdown-item" href="#">Account Details</a>
+        <a class="dropdown-item" href="#">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
