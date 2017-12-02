@@ -2,7 +2,7 @@
   <img class="card-img-top" src="{{project.image}}" alt="Card image cap">
   <div class="card-body">
     <a class="card-title" [routerLink]="['/projects', project.id]">{{project.name}}</a>
-    <p class="card-text">{{project.scenario}}</p>
+    <p class="card-text">{{project.scenario.name}}</p>
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>

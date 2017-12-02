@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HeaderService} from '../header.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,17 +9,15 @@ import {HeaderService} from '../header.service';
 })
 export class HeaderComponent implements OnInit {
   appName = 'Ecoglobe building optimizer';
-  loginClicked = false;
   isProjectPage = false;
   projectName: string;
 
-  constructor(private headersService: HeaderService) {
+  constructor(private router: Router, private headersService: HeaderService) {
   }
 
   ngOnInit() {
     this.headersService.onProjectPage.subscribe(
       (name: string) => {
-        debugger;
         if (name) {
           this.isProjectPage = true;
           this.projectName = name;
@@ -30,8 +29,7 @@ export class HeaderComponent implements OnInit {
     );
   }
 
-  onLogin() {
-    this.loginClicked = true;
-    console.log(this.loginClicked);
+  loadProjects() {
+    this.router.navigate(['/projects']);
   }
 }

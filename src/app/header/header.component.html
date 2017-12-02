@@ -5,7 +5,7 @@
       <span class="nav-link" *ngIf="!isProjectPage">
         {{appName}}
         </span>
-      <a class="nav-link" *ngIf="isProjectPage" [routerLink]="['/']">
+      <a class="nav-link" *ngIf="isProjectPage" [routerLink]="['/projects']">
         "All Projects" - {{projectName}}</a>
     </h5>
     <div class="clearfix"></div>
@@ -17,5 +17,10 @@
         <a class="dropdown-item" href="#">Logout</a>
       </div>
     </div>
+  </div>
+  <div class="row" *ngIf="!isProjectPage">
+    <button (click)="loadProjects()" type="button" class="btn btn-outline-secondary">
+      +
+    </button>
   </div>
 </div>
