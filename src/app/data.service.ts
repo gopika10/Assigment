@@ -9,9 +9,8 @@ export class DataService {
   ];
   constructor() { }
   getProject(id: number) {
-
     const projectObj = this.projects.find( function( project ){
-      return project.id === 1;
+      return project.id === id;
     } );
     return projectObj;
   }

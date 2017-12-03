@@ -19,7 +19,7 @@ export class ProjectDetailsComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     const id = this.route.snapshot.params['id'];
-    this.project = this.dataService.getProject(id);
+    this.project = this.dataService.getProject(parseInt(id, 10));
     this.headerService.onProjectPage.next(this.project.name);
     this.paramSubscription = this.route.params.subscribe(
       (params: Params) => {
