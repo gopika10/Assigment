@@ -1,5 +1,4 @@
-
-<input type="text" value="Search">
-<ul *ngFor="let project of projects" class="col-md-10">
+<input type="text" value="Search" class="project-search">
+<ul *ngFor="let project of projects">
   <app-project-card [project]="project"></app-project-card>
 </ul>

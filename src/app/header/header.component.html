@@ -37,7 +37,7 @@
         <span>All Projects</span>
       </a>
       <div ngbDropdown class="dropdown-container">
-        <a id="profileMenu" ngbDropdownToggle class="user-name">Tariq Kaddoura</a>
+        <a id="profileMenu" ngbDropdownToggle class="user-name cur-pointer">XYZ</a>
         <div ngbDropdownMenu aria-labelledby="profileMenu">
           <a class="dropdown-item" href="#">Account Details</a>
           <a class="dropdown-item" href="#">Logout</a>
@@ -47,7 +47,7 @@
       <h3 class="project-title">
         {{isProjectPage? projectName : "My projects"}}
       </h3>
-      <button (click)="loadProjects()" type="button" class="add-project-btn">
+      <button *ngIf="!isProjectPage" (click)="loadProjects()" type="button" class="add-project-btn cur-pointer">
         <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	        viewBox="0 0 20.5820007 20.5820007" style="enable-background:new 0 0 20.5820007 20.5820007;" xml:space="preserve">
           <style type="text/css">
@@ -75,6 +75,7 @@
             v8.3349609h8.3349609V12.2508106z"/>
       </svg>
       </button>
+
     </div>
   </div>
 

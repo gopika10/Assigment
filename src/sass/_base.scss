@@ -1,6 +1,11 @@
 html, body {
   font-family: 'Titillium Web', sans-serif;
 }
+
+html {
+  position: relative;
+}
+
 body {
   background-color: $uiLight00;
   * {
@@ -15,4 +20,12 @@ body {
   .container-fluid.main {
     padding: 0 32px;
   }
+}
+
+
+/****************************
+      Common Styles
+****************************/
+.cur-pointer {
+  cursor: pointer;
 }

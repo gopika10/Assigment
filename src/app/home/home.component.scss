@@ -1,0 +1,53 @@
+@import '~sass/variables';
+
+:host {
+  min-height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.empty-body-text {
+  color: $textDark00;
+  font-size: 36px;
+  font-weight: 300;
+}
+.custom-popover {
+  position: absolute;
+  z-index: 1060;
+  width: 322px;
+  height: 85px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,.2);
+  word-wrap: break-word;
+  background-color: #fff;
+  top: 65px;
+  right: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:after, &:before {
+    position: absolute;
+    top: -12px;
+    right: 29px;
+    content: "";
+    border-width: .8rem;
+    border-color: transparent;
+    border-style: solid;
+    border-bottom-color: #ffffff;
+    margin-left: -.8rem;
+    border-top-width: 0;
+  }
+  &:before {
+    top: -13px;
+    border-bottom-color: #E4E4E4;
+  }
+  h3 {
+    background: -webkit-linear-gradient(left, #00C3FA, #08cd71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 24px;
+    margin: 0;
+    font-weight: 600;
+  }
+}
