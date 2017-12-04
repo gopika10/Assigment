@@ -1,8 +1,158 @@
 @import '~sass/variables';
 
 .sidebar {
-  min-width: 250px;
-  max-width: 250px;
+  min-width: 300px;
+  max-width: 300px;
   height: 100vh;
-  background-color: gainsboro;
+  padding: 15px 0;
+  .link {
+    cursor: pointer;
+    min-height: 66px;
+    border-bottom: 2px solid $uiLight03;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    ul {
+      margin-top: 10px;
+    }
+    .icon {
+      width: 24px;
+      height: 21px;
+      opacity: 0.69;
+      margin-right: 25px;
+    }
+    .link-text {
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      padding-left: 15px;
+      a {
+        color: $uiDark00;
+      }
+    }
+    .sub-link {
+      height: 43px;
+      display: flex;
+      align-items: center;
+      padding-left: 58px;
+      font-size: 16px;
+      &.scenario {
+        color: $uiDark00;
+        font-weight: 700;
+      }
+      &.add-new-scenario {
+        opacity: 0.7;
+      }
+      &.active {
+        background-color: $uiLight03;
+        border-left: 4px solid $blue;
+      }
+    }
+    &.my-scenario {
+      .icon {
+        background: url(../../../assets/images/nav-myscenarios.svg) no-repeat;
+      }
+    }
+    &.compare {
+      .icon {
+        background: url(../../../assets/images/nav-compare.svg) no-repeat;
+      }
+    }
+    &.favorites {
+      .icon {
+        background: url(../../../assets/images/nav-favorites.svg) no-repeat;
+      }
+    }
+  }
 }
+
+.content {
+  box-shadow: -2px 0px 13px #ccc;
+  background-color: #ffffff;
+  flex: 1 1 auto;
+  .scenario-info {
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .scenario-name {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 600;
+    img {
+      margin-right: 22px;
+    }
+  }
+  .menu {
+    background: url(../../../assets/images/kebab-menue.svg) no-repeat;
+    border: none;
+    width: 4px;
+    height: 18px;
+    background-color: transparent;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+  .scenerio-details {
+    margin-top: 45px;
+    position: relative;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 724px;
+    height: 370px;
+    background-color: $uiLight03;
+    p {
+      text-align: center;
+      color: $uiDark00;
+    }
+    .para-1 {
+      font-size: 23px;
+      span {
+        font-weight: 600;
+        font-size: 32px;
+      }
+    }
+    .para-2 {
+      font-size: 23px;
+      font-weight: 700;
+    }
+    .para-3 {
+      font-weight: 600;
+      font-size: 18px;
+      color: #00cc67;
+    }
+    .para-4 {
+      font-size: 16px;
+      margin-top: 15px;
+    }
+    .btn {
+      background-color: #00C3FA;
+      border-color: #00C3FA;
+      color: white;
+      width: 263px;
+      height: 50px;
+      text-transform: uppercase;
+      font-size: 16px;
+      font-weight: 600;
+      &:hover {
+        background-color: #00C3FA;
+      }
+    }
+    &:before {
+      position: absolute;
+      top: -18px;
+      right: 47.5%;
+      content: "";
+      border-width: 1.2rem;
+      border-color: transparent;
+      border-style: solid;
+      border-bottom-color: $uiLight03;
+      margin-left: -.8rem;
+      border-top-width: 0;
+    }
+  }
+}
+

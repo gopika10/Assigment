@@ -1,40 +1,61 @@
-
 <div class="details-wrapper d-flex">
 
   <nav class="sidebar">
-    <!-- Sidebar Header -->
-    <div class="sidebar-header">
-      <h3>Collapsible Sidebar</h3></div>
-
-    <!-- Sidebar Links -->
     <ul class="list-unstyled components">
-
-      <li><!-- Link with dropdown items -->
-        <a [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample" (click)="isCollapsed = !isCollapsed">My Scenarios</a>
+      <li class="my-scenario link">
+        <div class="link-text">
+          <i class="icon"></i>
+          <a [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample" (click)="isCollapsed = !isCollapsed">
+            My Scenarios
+          </a>
+        </div>
         <ul class=" list-unstyled" id="collapseExample" [ngbCollapse]="isCollapsed">
-          <li class="active">Scenario -- {{project.scenario.name}}</li>
-          <li>+ Add new scenario</li>
+          <li *ngFor="let scenario of project.scenario; let i = index" [ngClass]="{'active' : i===0}"
+              class="sub-link scenario">
+            {{scenario.name}}
+          </li>
+          <li class="sub-link add-new-scenario">+ Add new scenario</li>
         </ul>
-      <li>Compare</li>
-      <li>Favorites</li>
+      <li class="compare link">
+        <div class="link-text">
+          <i class="icon"></i>
+          Compare
+        </div>
+      </li>
+      <li class="favorites link">
+        <div class="link-text">
+          <i class="icon"></i>
+          Favorites
+        </div>
+      </li>
     </ul>
   </nav>
 
-  <div id="content">
-    <p>
-      {{project.name}}
-    </p>
-
-    <ngb-tabset>
-      <ngb-tab *ngFor="let scenarioLink of project.scenario.links">
-        <ng-template ngbTabTitle>{{scenarioLink}}</ng-template>
-        <ng-template ngbTabContent>Wow, I see there are 20,424,424,011 possible solutions to combine materials and technologies in this scenario.
-          Don‘t worry. I can help you find the best solution
-          – tailor-made to meet your goals.
-
-          You have 1 optimization run free in your trial plan.
-          <button class="btn btn-primary">Start Optimization</button>
-          Estimated server run time: approx. 48:00 h
+  <div class="content">
+    <!-- currently populating first scenario by default but later based on logic this can be changed dynamically -->
+    <div class="scenario-info">
+      <div class="scenario-name">
+        <img src="../../../assets/images/1.png" alt="Scenario">
+        {{project.scenario[0].name}}
+      </div>
+      <div>
+        <button class="menu" type="button"></button>
+      </div>
+    </div>
+    <ngb-tabset class="scenario-links" type="pills">
+      <ngb-tab *ngFor="let scenarioLink of project.scenario[0].links">
+        <ng-template ngbTabTitle><span class="name">{{scenarioLink}}</span></ng-template>
+        <ng-template ngbTabContent>
+          <img src="../../../assets/images/robot.svg" class="robot-img">
+          <div class="scenerio-details">
+            <p class="para-1">Wow, I see there are <span>20,424,424,011</span> possible solutions to combine materials and
+              technologies in this scenario.</p>
+            <p class="para-2">Don‘t worry. I can help you find the best solution
+              – tailor-made to meet your goals.</p>
+            <p class="para-3">You have 1 optimization run free in your trial plan.</p>
+            <button class="btn btn-start-optimization">Start Optimization</button>
+            <p class="para-4">Estimated server run time: approx. 48:00 h</p>
+          </div>
         </ng-template>
       </ngb-tab>
     </ngb-tabset>

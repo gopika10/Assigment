@@ -1,0 +1,38 @@
+.scenario-links {
+  .nav {
+    border-bottom: 1px solid #eee;
+    padding-left: 25px;
+    .nav-item {
+      margin-bottom: -1px;
+      &:focus {
+        border: none;
+      }
+      .nav-link {
+        border-radius: 0;
+        text-transform: uppercase;
+        font-size:16px;
+        font-weight: 600;
+        color: $textDark01;
+        &.active {
+          border: 0;
+          border-bottom: 4px solid #00bbff;
+          background-color: transparent;
+          color: #00bbff;
+        }
+      }
+    }
+  }
+  .tab-content {
+    padding: 25px;
+    .tab-pane {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .robot-img {
+        height: 115px;
+        width: 95px;
+      }
+    }
+  }
+}

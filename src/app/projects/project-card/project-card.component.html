@@ -1,17 +1,29 @@
-<div class="card" style="width: 20rem;">
-  <img class="card-img-top" src="{{project.image}}" alt="Card image cap">
-  <div class="card-body">
-    <a class="card-title" [routerLink]="['/projects', project.id]">{{project.name}}</a>
-    <p class="card-text">{{project.scenario.name}}</p>
-
-      <div ngbDropdown class="project-menu-dropdown">
-        <span id="projectMenu" ngbDropdownToggle>...</span>
-        <div ngbDropdownMenu aria-labelledby="projectMenu">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Action</a>
-        </div>
+<div class="card">
+  <a [routerLink]="['/projects', project.id]"><img class="card-img-top" src="{{project.image}}" alt="{{project.name}}"></a>
+  <div class="card-body d-flex justify-content-between">
+    <div>
+      <a class="card-title" [routerLink]="['/projects', project.id]">{{project.name}}</a>
+      <p class="card-text">{{project.scenario.length}} scenario</p>
+    </div>
+    <div ngbDropdown class="project-menu-dropdown" placement="bottom">
+      <span id="projectMenu" class="menu" ngbDropdownToggle>
+        <img src="../../../assets/images/kebab-menue.svg">
+      </span>
+      <div ngbDropdownMenu aria-labelledby="projectMenu">
+        <a class="dropdown-item open" href="#">
+          <i class="icon "></i>Open Project
+        </a>
+        <a class="dropdown-item duplicate" href="#">
+          <i class="icon "></i>Duplicate Project
+        </a>
+        <a class="dropdown-item edit" href="#">
+          <i class="icon "></i>Edit Project
+        </a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item delete" href="#">
+          Delete Project
+        </a>
       </div>
+    </div>
   </div>
 </div>

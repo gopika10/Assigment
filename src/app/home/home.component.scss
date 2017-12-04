@@ -1,6 +1,7 @@
 @import '~sass/variables';
 
 :host {
+  padding: 0 19px;
   min-height: inherit;
   display: flex;
   justify-content: center;
@@ -29,7 +30,7 @@
   &:after, &:before {
     position: absolute;
     top: -12px;
-    right: 29px;
+    right: 45px;
     content: "";
     border-width: .8rem;
     border-color: transparent;

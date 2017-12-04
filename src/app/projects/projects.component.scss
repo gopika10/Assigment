@@ -1,0 +1,25 @@
+:host {
+  padding: 0 19px;
+  display: block;
+}
+.input-container {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  .project-search {
+    border: 0;
+    background: transparent;
+    margin-top: 27px;
+  }
+  img {
+    margin-top: 27px;
+    height: 26px;
+    width: 26px;
+    margin-right: 10px;
+  }
+}
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}

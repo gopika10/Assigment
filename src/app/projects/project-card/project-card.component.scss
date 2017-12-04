@@ -1,0 +1,78 @@
+@import '~sass/variables';
+
+.card {
+  position: relative;
+  width: 365px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, .2);
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.card-img-top {
+  width: 365px;
+  height: 234px;
+}
+
+.card-title {
+  font-size: 22px;
+  color: black;
+  text-decoration: none;
+}
+
+.card-text {
+  opacity: 0.5;
+  font-weight: 600;
+}
+
+.menu {
+  cursor: pointer;
+  padding-left: 5px;
+  img {
+    height: 20px;
+  }
+  &:after {
+    display: none;
+  }
+}
+.dropdown-menu {
+  transition: unset;
+  top: 254px !important;
+  left: 210px !important;
+}
+
+.project-menu-dropdown {
+  .dropdown-menu {
+    width: 224px;
+  }
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    colo: $textDark00;
+    .icon {
+      opacity: 0.3;
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+    &.open {
+      i {
+        background: url(../../../assets/images/simulation-info.svg);
+      }
+    }
+    &.duplicate {
+      i {
+        background: url(../../../assets/images/copy.svg);
+      }
+    }
+    &.edit {
+      i {
+        background: url(../../../assets/images/edit.svg);
+      }
+    }
+    &.delete {
+      color: #b00707;
+    }
+  }
+}
