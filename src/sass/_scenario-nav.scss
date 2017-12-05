@@ -13,9 +13,9 @@
         font-size:16px;
         font-weight: 600;
         color: $textDark01;
+        border-bottom: 4px solid transparent;
         &.active {
-          border: 0;
-          border-bottom: 4px solid #00bbff;
+          border-color: #00bbff;
           background-color: transparent;
           color: #00bbff;
         }

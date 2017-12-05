@@ -10,17 +10,17 @@
         <img src="../../../assets/images/kebab-menue.svg">
       </span>
       <div ngbDropdownMenu aria-labelledby="projectMenu">
-        <a class="dropdown-item open" href="#">
+        <a class="dropdown-item open" [routerLink]="['/projects', project.id]">
           <i class="icon "></i>Open Project
         </a>
-        <a class="dropdown-item duplicate" href="#">
+        <a class="dropdown-item duplicate">
           <i class="icon "></i>Duplicate Project
         </a>
-        <a class="dropdown-item edit" href="#">
+        <a class="dropdown-item edit">
           <i class="icon "></i>Edit Project
         </a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item delete" href="#">
+        <a class="dropdown-item delete">
           Delete Project
         </a>
       </div>

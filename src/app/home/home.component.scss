@@ -29,10 +29,10 @@
   justify-content: center;
   &:after, &:before {
     position: absolute;
-    top: -12px;
-    right: 45px;
+    top: -18px;
+    right: 39px;
     content: "";
-    border-width: .8rem;
+    border-width: 1.2rem;
     border-color: transparent;
     border-style: solid;
     border-bottom-color: #ffffff;
@@ -40,7 +40,7 @@
     border-top-width: 0;
   }
   &:before {
-    top: -13px;
+    top: -19px;
     border-bottom-color: #E4E4E4;
   }
   h3 {
